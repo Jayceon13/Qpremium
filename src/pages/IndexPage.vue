@@ -88,10 +88,18 @@
         <q-btn id="service-btn" outline rounded label="Подробнее" />
       </div>
       <div class="block-doctors-img">
-        <img id="doctor1" src="">
-        <img id="doctor2" src="">
-        <img id="doctor3" src="">
-        <img id="doctor4" src="">
+        <div class="doctor-block1">
+          <img id="doctor1" src="">
+        </div>
+        <div class="doctor-block2">
+          <img id="doctor2" src="">
+        </div>
+        <div class="doctor-block3">
+          <img id="doctor3" src="">
+        </div>
+        <div class="doctor-block4">
+          <img id="doctor4" src="">
+        </div>
       </div>
     </div>
     <div class="fifth-block">
@@ -445,7 +453,7 @@ export default defineComponent({
 }
 .block-doctors-img{
   width: 60%;
-  display: table;
+  display: flex;
   position: relative;
   justify-content: center;
   align-items: center;
@@ -453,7 +461,7 @@ export default defineComponent({
   text-align: end;
   height: 100%;
 }
-#doctor1{
+.doctor-block1{
   width: 180px;
   height: 180px;
   background-color: white;
@@ -461,7 +469,7 @@ export default defineComponent({
   position: relative;
   right: -120px;
 }
-#doctor2{
+.doctor-block2{
   width: 200px;
   height: 200px;
   background-color: white;
@@ -470,7 +478,7 @@ export default defineComponent({
   position: relative;
   right: -120px;
 }
-#doctor3{
+.doctor-block3{
   width: 160px;
   height: 160px;
   background-color: white;
@@ -478,7 +486,7 @@ export default defineComponent({
   position: relative;
   top: 140px;
 }
-#doctor4{
+.doctor-block4{
   width: 230px;
   height: 230px;
   background-color: white;
