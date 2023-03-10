@@ -103,13 +103,42 @@
       </div>
     </div>
     <div class="fifth-block">
+      <div class="fifth-block-text">
+        <h2>Отзывы</h2>
+      </div>
       <q-carousel
+        style="border-radius: 20px"
+        v-if="$q.screen.width <= 600"
         v-model="slide"
         transition-prev="slide-right"
         transition-next="slide-left"
         swipeable
         animated
-        control-color="primary"
+        infinite
+        autoplay
+        control-color="white"
+        navigation
+        padding
+        arrows
+        height="300px"
+        class="bg-grey-1 shadow-2 rounded-borders"
+      >
+        <q-carousel-slide style="border-radius: 20px" :name="1" img-src="https://cdn.quasar.dev/img/mountains.jpg" />
+        <q-carousel-slide style="border-radius: 20px" :name="2" img-src="https://cdn.quasar.dev/img/parallax1.jpg" />
+        <q-carousel-slide style="border-radius: 20px" :name="3" img-src="https://cdn.quasar.dev/img/parallax2.jpg" />
+        <q-carousel-slide style="border-radius: 20px" :name="4" img-src="https://cdn.quasar.dev/img/quasar.jpg" />
+      </q-carousel>
+      <q-carousel
+        style="border-radius: 20px"
+        v-if="$q.screen.width >= 600"
+        v-model="slide"
+        transition-prev="slide-right"
+        transition-next="slide-left"
+        swipeable
+        animated
+        infinite
+        autoplay
+        control-color="black"
         navigation
         padding
         arrows
@@ -156,7 +185,7 @@ export default defineComponent({
   },
   mounted() {
     const container = this.$el.querySelector('.fourth-block');
-    const elements = container.querySelectorAll('img');
+    const elements = container.querySelectorAll('.doctor-block1, .doctor-block2, .doctor-block3, .doctor-block4');
 
     container.addEventListener('mousemove', e => {
       const bounds = container.getBoundingClientRect();
@@ -171,7 +200,7 @@ export default defineComponent({
         const distanceX = mouseX - elementX;
         const distanceY = mouseY - elementY;
 
-        const strength = 20;
+        const strength = -20;
 
         let x = 0;
         let y = 0;
@@ -205,7 +234,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.block-doctors-img img {
+.doctor-block1, .doctor-block2, .doctor-block3, .doctor-block4 {
   transition: transform 0.3s ease-out;
 }
 .block-service-img{
@@ -272,6 +301,10 @@ export default defineComponent({
   .second-block-services{
     width: 50%;
   }
+  .second-block-services{
+    padding-left: 60px;
+    border-left: white 1px solid;
+  }
 }
 .second-block-img{
   display: flex;
@@ -296,6 +329,7 @@ export default defineComponent({
   top: 0;
   bottom: 0;
   z-index: -2;
+  border-radius: 10px;
 }
 .block-video-bg{
   background: rgba(0,0,0,0.7);
@@ -313,6 +347,7 @@ export default defineComponent({
   align-items: center;
   text-align: center;
   color: #828560;
+  border-radius: 10px;
 }
 .second-block-services{
   display: flex;
@@ -454,7 +489,6 @@ export default defineComponent({
 .block-doctors-img{
   width: 60%;
   display: flex;
-  position: relative;
   justify-content: center;
   align-items: center;
   white-space: nowrap;
@@ -462,36 +496,49 @@ export default defineComponent({
   height: 100%;
 }
 .doctor-block1{
-  width: 180px;
-  height: 180px;
+  height: 400px;
+  width: 250px;
   background-color: white;
-  border-radius: 100%;
-  position: relative;
-  right: -120px;
+  border-radius: 20px;
+  border: black 1px solid;
 }
 .doctor-block2{
-  width: 200px;
-  height: 200px;
+  height: 350px;
+  width: 230px;
   background-color: white;
-  border-radius: 100%;
-  top: -120px;
-  position: relative;
-  right: -120px;
+  border-radius: 20px;
+  border: black 1px solid;
+
 }
 .doctor-block3{
-  width: 160px;
-  height: 160px;
+  height: 300px;
+  width: 200px;
   background-color: white;
-  border-radius: 100%;
-  position: relative;
-  top: 140px;
+  border-radius: 20px;
+  border: black 1px solid;
+
 }
 .doctor-block4{
-  width: 230px;
-  height: 230px;
+  height: 250px;
+  width: 170px;
   background-color: white;
-  border-radius: 100%;
-  position: relative;
+  border-radius: 20px;
+  border: black 1px solid;
+}
+#doctor1{
+  background-color: white;
+}
+#doctor2{
+
+  background-color: white;
+}
+#doctor3{
+
+  background-color: white;
+}
+#doctor4{
+
+  background-color: white;
 }
 @media screen and (min-width: 1180px){
  .fourth-block{
@@ -502,6 +549,40 @@ export default defineComponent({
   .fourth-block{
     flex-flow: column-reverse;
     padding: 0;
+    height: auto;
+    margin-top: 30px;
   }
+  .block-doctors-text{
+    text-align: center;
+  }
+}
+@media screen and (max-width: 800px){
+  .block-doctors-img{
+    flex-flow: column;
+  }
+  .doctor-block1{
+    margin: 15px 0 15px 0;
+  }
+  .doctor-block2{
+    margin: 15px 0 15px 0;
+  }
+  .doctor-block3{
+    margin: 15px 0 15px 0;
+  }
+  .doctor-block4{
+    margin: 15px 0 15px 0;
+  }
+}
+.fifth-block{
+  display: flex;
+  flex-flow: column;
+}
+.fifth-block-text{
+  display: flex;
+  justify-content: center;
+  color: #828560;
+}
+.fifth-block-text h2{
+  font-weight: bold;
 }
 </style>
