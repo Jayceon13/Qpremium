@@ -1,21 +1,29 @@
 <template>
   <q-page>
     <div class="block-main">
-        <video autoplay muted loop playsinline poster="public/img/poster.jpg" id="myVideo">
+        <video autoplay muted loop playsinline poster="/img/poster.jpg" id="myVideo">
           <source src="/video/bgvdo.mp4" type="video/mp4">
         </video>
       <div class="block-video-bg">
-        <h3>Добро пожаловать</h3>
+        <h3
+          data-aos="zoom-in"
+          data-aos-easing="ease"
+          data-aos-delay="500">Добро пожаловать</h3>
       </div>
     </div>
     <div class="second-block">
-      <h2>Услуги</h2>
+      <h2
+        data-aos="zoom-in"
+        data-aos-easing="ease"
+        data-aos-delay="300">Услуги</h2>
       <div class="second-block-items">
-      <div class="second-block-img">
+      <div class="second-block-img"
+           data-aos="fade-right">
         <img src="/img/block2.png">
       </div>
       <div class="second-block-services">
-        <div class="block-services">
+        <div class="block-services"
+             data-aos="fade-left">
           <div class="block-service-img">
             <img id="serviceimg" src="/icons/service1.svg" alt="">
           </div>
@@ -28,7 +36,8 @@
             <q-btn id="service-btn" outline rounded label="Врачи" />
           </div>
         </div>
-        <div class="block-services">
+        <div class="block-services"
+             data-aos="fade-left">
           <div class="block-service-img">
             <img id="serviceimg" src="/icons/service2.svg" alt="">
           </div>
@@ -41,7 +50,8 @@
             <q-btn id="service-btn" outline rounded label="Врачи" />
           </div>
         </div>
-        <div class="block-services">
+        <div class="block-services"
+             data-aos="fade-left">
           <div class="block-service-img">
             <img id="serviceimg" src="/icons/service3.svg" alt="">
           </div>
@@ -54,7 +64,8 @@
             <q-btn id="service-btn" outline rounded label="Врачи" />
           </div>
         </div>
-        <div class="block-services">
+        <div class="block-services"
+             data-aos="fade-left">
           <div class="block-service-img">
             <img id="serviceimg" src="/icons/service4.svg" alt="">
           </div>
@@ -71,23 +82,30 @@
       </div>
     </div>
     <div class="third-block">
-      <h2>Кто мы?</h2>
+      <h2
+        data-aos="zoom-in"
+        data-aos-easing="ease"
+        data-aos-delay="300">Кто мы?</h2>
       <div class="third-block-items">
-        <div class="third-block-text">
+        <div class="third-block-text"
+             data-aos="fade-right">
           <p>описание описание описание описание описание описание описание описание описание описание описание описание описание описание </p>
         </div>
-        <div class="third-block-img">
+        <div class="third-block-img"
+             data-aos="fade-left">
           <img src="/img/block3.png" alt="">
         </div>
       </div>
     </div>
     <div class="fourth-block">
-      <div class="block-doctors-text">
+      <div class="block-doctors-text"
+           data-aos="fade-right">
         <h3>Наши врачи</h3>
         <p>Познакомьтесь ближе с нашими врачами</p>
         <q-btn id="service-btn" outline rounded label="Подробнее" />
       </div>
-      <div class="block-doctors-img">
+      <div class="block-doctors-img"
+           data-aos="fade-left">
         <div class="doctor-block1">
           <img id="doctor1" src="">
         </div>
@@ -104,9 +122,15 @@
     </div>
     <div class="fifth-block">
       <div class="fifth-block-text">
-        <h2>Отзывы</h2>
+        <h2
+          data-aos="zoom-in"
+          data-aos-easing="ease"
+          data-aos-delay="300">Отзывы</h2>
       </div>
       <q-carousel
+        data-aos="zoom-in"
+        data-aos-easing="ease"
+        data-aos-delay="300"
         style="border-radius: 20px"
         v-if="$q.screen.width <= 600"
         v-model="slide"
@@ -129,6 +153,9 @@
         <q-carousel-slide style="border-radius: 20px" :name="4" img-src="https://cdn.quasar.dev/img/quasar.jpg" />
       </q-carousel>
       <q-carousel
+        data-aos="zoom-in"
+        data-aos-easing="ease"
+        data-aos-delay="300"
         style="border-radius: 20px"
         v-if="$q.screen.width >= 600"
         v-model="slide"

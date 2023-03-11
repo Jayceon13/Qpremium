@@ -10,22 +10,27 @@
 .preloader-img{
   width: 500px;
 }
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: #828560;
-  color: white;
-  width: 100%;
-  height: 100%;
-  z-index: 99999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-  animation: slide-fade 1s ease-in-out forwards;
-  animation-delay: 1.3s;
+@media screen and (max-width: 650px) {
+  .preloader-img {
+    width: 250px;
+  }
 }
+  .preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #828560;
+    color: white;
+    width: 100%;
+    height: 100%;
+    z-index: 99999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    animation: slide-fade 1s ease-in-out forwards;
+    animation-delay: 1.3s;
+  }
 .preloader-logo {
   animation: zoom .5s ease-in-out forwards;
   transform: scale(1);

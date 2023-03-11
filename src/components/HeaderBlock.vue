@@ -1,7 +1,8 @@
 <template>
   <div class="header-block">
     <div class="block-logo-header" @click="$router.push ('/')">
-      <img id="logohome" src="/icons/logoblack.png">
+      <img id="logohome-black" v-if="showLogoBlack" src="/icons/logoblack.png">
+      <img id="logohome-white" v-else src="/icons/logowhite.png">
     </div>
     <div class="block-languages">
       <div id="language" class="language-ru">
@@ -37,19 +38,19 @@
              id="menutab">
           УСЛУГИ
         </div>
-        <div @click="() => {$router.push ('/contacts'); showBurgerMenu}"
+        <div @click="() => {$router.push ('/about'); showBurgerMenu}"
              class="block-about"
              id="menutab"
         >
           О КЛИНИКЕ
         </div>
-        <div @click="() => {$router.push ('/contacts'); showBurgerMenu}"
+        <div @click="() => {$router.push ('/doctors'); showBurgerMenu}"
              class="block-doctors"
              id="menutab"
         >
           ВРАЧИ
         </div>
-        <div @click="() => {$router.push ('/contacts'); showBurgerMenu}"
+        <div @click="() => {$router.push ('/examples'); showBurgerMenu}"
              class="block-examples"
              id="menutab"
         >
@@ -75,6 +76,31 @@ import { ref } from 'vue'
 
 export default {
   name: "HeaderBlock",
+  data() {
+    return {
+      showLogoBlack: false,
+    };
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll);
+  },
+  beforeUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      if ( window.scrollY >= window.innerHeight ) {
+        this.showLogoBlack = true;
+      }
+      else if( this.$route.path !== '/' ){
+        this.showLogoBlack = true;
+      }
+      else
+       {
+        this.showLogoBlack = false;
+      }
+    },
+  },
   setup () {
     const showBurgerMenu = ref(false)
 
@@ -92,14 +118,16 @@ export default {
 #menutab{
   cursor: pointer;
 }
-.block-logo-header{
+.block-logo-header {
   display: flex;
   width: 40px;
   position: fixed;
   margin: 15px;
   z-index: 90;
 }
-#logohome {
+
+#logohome-black,
+#logohome-white {
   cursor: pointer;
   width: 70px;
 }
