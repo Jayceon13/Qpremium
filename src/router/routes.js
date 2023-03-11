@@ -4,12 +4,12 @@ const routes = [
     path: '/',
     component: () => import('layouts/MainLayout.vue'),
     children: [
-      { path: '', component: () => import('pages/IndexPage.vue') },
-      { path: '/about', component: () => import('pages/AboutPage.vue') },
-      { path: '/contacts', component: () => import('pages/ContactPage.vue') },
-      { path: '/examples', component: () => import('pages/ExamplesPage.vue') },
-      { path: '/services', component: () => import('pages/ServicesPage.vue') },
-      { path: '/doctors', component: () => import('pages/DoctorsPage.vue') }
+      { path: '', component: () => import('pages/IndexPage.vue'), meta: { key: '' } },
+      { path: '/about', component: () => import('pages/AboutPage.vue'), meta: { key: '/about' } },
+      { path: '/contacts', component: () => import('pages/ContactPage.vue'), meta: { key: '/contacts' } },
+      { path: '/examples', component: () => import('pages/ExamplesPage.vue'), meta: { key: '/examples' } },
+      { path: '/services', component: () => import('pages/ServicesPage.vue'), meta: { key: '/services' } },
+      { path: '/doctors', component: () => import('pages/DoctorsPage.vue'), meta: { key: '/doctors' } }
     ]
   },
 

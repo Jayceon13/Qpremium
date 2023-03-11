@@ -1,9 +1,11 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <preloader-menu></preloader-menu>
+    <preloader-menu v-if="showPreloader"></preloader-menu>
     <header-block></header-block>
     <q-page-container>
-      <router-view />
+      <transition :key="$route.meta.key" name="router-anim">
+        <router-view />
+      </transition>
     </q-page-container>
     <footer-block></footer-block>
   </q-layout>
@@ -23,6 +25,10 @@ export default defineComponent({
     HeaderBlock,
     FooterBlock
   },
-
+  computed: {
+    showPreloader() {
+      return this.$route.path === '/'
+    }
+  }
 })
 </script>
