@@ -574,7 +574,7 @@ export default defineComponent({
 }
 @media screen and (max-width: 1180px){
   .fourth-block{
-    flex-flow: column-reverse;
+    flex-flow: column;
     padding: 0;
     height: auto;
     margin-top: 30px;
